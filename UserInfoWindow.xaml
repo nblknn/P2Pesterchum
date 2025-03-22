@@ -1,0 +1,35 @@
+﻿<Window x:Class="P2P_Chat.UserInfoWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:P2P_Chat"
+        mc:Ignorable="d" Icon="pesterchum.ico"
+        Title="Вход" Height="200" Width="400" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize">
+    <Window.Resources>
+        <Style TargetType="{x:Type Window}">
+            <Setter Property="FontFamily" Value="Courier New" />
+            <Setter Property="FontSize" Value="14" />
+            <Setter Property="FontWeight" Value="Bold" />
+        </Style>
+    </Window.Resources>
+    <Border Background="Orange">
+        <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="3*"></ColumnDefinition>
+            <ColumnDefinition Width="7*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="3*"></RowDefinition>
+            <RowDefinition Height="3*"></RowDefinition>
+            <RowDefinition Height="3*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Label Grid.Column="0" Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center">Ваш IP-адрес:</Label>
+        <TextBox Name="tbIP" Grid.Column="1" Grid.Row="0" VerticalAlignment="Center" Margin="10"></TextBox>
+        <Label Grid.Column="0" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center">Ваше имя:</Label>
+            <TextBox Name="tbName" Grid.Column="1" Grid.Row="1" VerticalAlignment="Center" Margin="10" KeyDown="tbName_KeyDown"></TextBox>
+            <Button Grid.Row="2" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="10"
+                Background="Yellow" BorderBrush="DarkGoldenrod" BorderThickness="2" Click="Button_Click">Войти в чат</Button>
+        </Grid>
+    </Border>
+</Window>

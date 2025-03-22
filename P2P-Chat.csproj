@@ -1,0 +1,26 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <RootNamespace>P2P_Chat</RootNamespace>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+<PropertyGroup>
+    <ApplicationIcon>pesterchum.ico</ApplicationIcon>
+</PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="pesterchum.ico" />
+    <None Remove="pesterchumrose.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="pesterchum.ico" />
+    <Resource Include="pesterchumrose.ico" />
+  </ItemGroup>
+
+</Project>
