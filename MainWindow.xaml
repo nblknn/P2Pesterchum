@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:P2P_Chat"
         mc:Ignorable="d" Icon="pesterchum.ico"
-        Title="nblcht" Height="600" Width="700" WindowStartupLocation="CenterScreen" WindowStyle="None" MinHeight="200" MinWidth="200">
+        Title="nblcht" Height="600" Width="700" WindowStartupLocation="CenterScreen"
+        WindowStyle="None" MinHeight="200" MinWidth="200" Closing="Window_Closing">
     <Window.Resources>
         <Style TargetType="{x:Type Window}">
             <Setter Property="FontFamily" Value="Courier New" />
@@ -21,9 +22,9 @@
     <WindowChrome.WindowChrome>
         <WindowChrome CaptionHeight="30" CornerRadius="0"/>
     </WindowChrome.WindowChrome>
-    
+
     <Border Background="Orange" CornerRadius="0" BorderThickness="2" BorderBrush="DarkGoldenrod">
-       <!-- <Border.Background>
+        <!-- <Border.Background>
             <LinearGradientBrush StartPoint="0 0" EndPoint="0 1">
                 <LinearGradientBrush.GradientStops>
                     <GradientStop Offset="0.1" Color="RosyBrown" />

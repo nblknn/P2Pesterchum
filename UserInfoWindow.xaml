@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:P2P_Chat"
         mc:Ignorable="d" Icon="pesterchum.ico"
-        Title="Вход" Height="200" Width="400" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize">
+        Title="Вход" Height="220" Width="400" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize" WindowStyle="None">
     <Window.Resources>
         <Style TargetType="{x:Type Window}">
             <Setter Property="FontFamily" Value="Courier New" />
@@ -13,22 +13,47 @@
             <Setter Property="FontWeight" Value="Bold" />
         </Style>
     </Window.Resources>
-    <Border Background="Orange">
+    <Window.CommandBindings>
+        <CommandBinding Command="{x:Static SystemCommands.CloseWindowCommand}" CanExecute="CommandBinding_CanExecute_1" Executed="CommandBinding_Executed_1" />
+        <CommandBinding Command="{x:Static SystemCommands.MinimizeWindowCommand}" CanExecute="CommandBinding_CanExecute_1" Executed="CommandBinding_Executed_3" />
+    </Window.CommandBindings>
+    <WindowChrome.WindowChrome>
+        <WindowChrome CaptionHeight="30" CornerRadius="0"/>
+    </WindowChrome.WindowChrome>
+    <Border Background="Orange" BorderThickness="2" BorderBrush="DarkGoldenrod">
         <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="3*"></ColumnDefinition>
-            <ColumnDefinition Width="7*"></ColumnDefinition>
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="3*"></RowDefinition>
-            <RowDefinition Height="3*"></RowDefinition>
-            <RowDefinition Height="3*"></RowDefinition>
-        </Grid.RowDefinitions>
-        <Label Grid.Column="0" Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center">Ваш IP-адрес:</Label>
-        <TextBox Name="tbIP" Grid.Column="1" Grid.Row="0" VerticalAlignment="Center" Margin="10"></TextBox>
-        <Label Grid.Column="0" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center">Ваше имя:</Label>
-            <TextBox Name="tbName" Grid.Column="1" Grid.Row="1" VerticalAlignment="Center" Margin="10" KeyDown="tbName_KeyDown"></TextBox>
-            <Button Grid.Row="2" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="10"
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="3*"></ColumnDefinition>
+                <ColumnDefinition Width="7*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1.5*"></RowDefinition>
+                <RowDefinition Height="3*"></RowDefinition>
+                <RowDefinition Height="3*"></RowDefinition>
+                <RowDefinition Height="3*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Border Grid.Row="0" Grid.ColumnSpan="3" Background="DarkGoldenrod">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="20"></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition Width="40"></ColumnDefinition>
+                        <ColumnDefinition Width="40"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <!-- <Image Grid.Column="0" Source="pesterchum.ico" Margin="0,0,0,0" Height="25"></Image>-->
+                    <TextBlock Grid.Column="1" Foreground="White"
+                   HorizontalAlignment="Left" VerticalAlignment="Center">Вход</TextBlock>
+                    <Button Grid.Column="2" Command="{x:Static SystemCommands.MinimizeWindowCommand}" Content="-"
+                WindowChrome.IsHitTestVisibleInChrome="True" Background="Transparent" BorderThickness="0"/>
+                    <Button Grid.Column="3" Command="{x:Static SystemCommands.CloseWindowCommand}" Content="X"
+                WindowChrome.IsHitTestVisibleInChrome="True" Background="Transparent" BorderThickness="0"/>
+                </Grid>
+            </Border>
+            <Label Grid.Column="0" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center">Ваш IP-адрес:</Label>
+            <TextBox Name="tbIP" Grid.Column="1" Grid.Row="1" VerticalAlignment="Center" Margin="10"></TextBox>
+            <Label Grid.Column="0" Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Center">Ваше имя:</Label>
+            <TextBox Name="tbName" Grid.Column="1" Grid.Row="2" VerticalAlignment="Center" Margin="10" KeyDown="tbName_KeyDown"></TextBox>
+            <Button Grid.Row="3" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="10"
                 Background="Yellow" BorderBrush="DarkGoldenrod" BorderThickness="2" Click="Button_Click">Войти в чат</Button>
         </Grid>
     </Border>

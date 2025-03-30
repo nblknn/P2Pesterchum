@@ -3,15 +3,11 @@
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
     <TargetFramework>net8.0-windows</TargetFramework>
-    <RootNamespace>P2P_Chat</RootNamespace>
+    <RootNamespace>P2P_Chat_2</RootNamespace>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <UseWPF>true</UseWPF>
   </PropertyGroup>
-
-<PropertyGroup>
-    <ApplicationIcon>pesterchum.ico</ApplicationIcon>
-</PropertyGroup>
 
   <ItemGroup>
     <None Remove="pesterchum.ico" />

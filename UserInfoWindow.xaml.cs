@@ -1,4 +1,5 @@
-﻿using System;
+﻿using lab3;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -12,7 +13,6 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using lab3;
 
 namespace P2P_Chat {
     /// <summary>
@@ -36,6 +36,21 @@ namespace P2P_Chat {
         private void tbName_KeyDown(object sender, KeyEventArgs e) {
             if (Encoding.Default.GetByteCount(tbName.Text) >= MainWindow.MAXNAMELENGTH && e.Key != Key.Back)
                 e.Handled = true;
+        }
+        private void CommandBinding_CanExecute_1(object sender, CanExecuteRoutedEventArgs e) {
+            e.CanExecute = true;
+        }
+
+        private void CommandBinding_Executed_1(object sender, ExecutedRoutedEventArgs e) {
+            SystemCommands.CloseWindow(this);
+        }
+
+        private void CommandBinding_Executed_2(object sender, ExecutedRoutedEventArgs e) {
+            SystemCommands.MaximizeWindow(this);
+        }
+
+        private void CommandBinding_Executed_3(object sender, ExecutedRoutedEventArgs e) {
+            SystemCommands.MinimizeWindow(this);
         }
     }
 }
